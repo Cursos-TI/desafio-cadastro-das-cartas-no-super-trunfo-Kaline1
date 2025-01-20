@@ -130,7 +130,7 @@ int main() {
             printf("\nVocê ganhou esta rodada!\n");
             pontos_jogador++;
         } else {
-            printf("\nO computador ganhou esta rodada!\n");
+            printf("\nO computador ganhou.\n");
             pontos_computador++;
         }
         printf("\nPlacar:\n");
@@ -138,7 +138,7 @@ int main() {
         printf("Computador: %d pontos\n", pontos_computador);
 
         char continuar;
-        printf("\nDeseja continuar jogando? (s/n): ");
+        printf("\nQuer continuar o jogo? (s/n): ");
         scanf(" %c", &continuar);
 
         if (continuar == 'n' || continuar == 'N') {
@@ -146,11 +146,11 @@ int main() {
         }
     }
     if (pontos_jogador > pontos_computador) {
-        printf("\nVocê venceu o jogo! Parabéns!\n");
+        printf("\nVocê ganhou.\n");
     } else if (pontos_jogador < pontos_computador) {
-        printf("\nO computador venceu o jogo. Tente novamente!\n");
+        printf("\nO computador gamhou.\n");
     } else {
-        printf("\nO jogo empatou!\n");
+        printf("\nO jogo empatou.\n");
     }
 
     return 0;
