@@ -18,7 +18,7 @@ void exibir_carta(Cidade carta) {
 }
 int escolher_característica() {
     int escolha;
-    printf("\nEscolha a característica para comparar:\n");
+    printf("\nEscolha uma característica para comparar:\n");
     printf("1 - População:\n");
     printf("2 - Área:\n");
     printf("3 - PIB:\n");
