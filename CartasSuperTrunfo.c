@@ -18,24 +18,24 @@ void exibir_carta(Cidade carta) {
 }
 int escolher_característica() {
     int escolha;
-    printf("\nEscolha o atributo para comparar:\n");
-    printf("1 - População\n");
-    printf("2 - Área\n");
-    printf("3 - PIB\n");
-    printf("4 - Pontos turísticos\n");
+    printf("\nEscolha a característica para comparar:\n");
+    printf("1 - População:\n");
+    printf("2 - Área:\n");
+    printf("3 - PIB:\n");
+    printf("4 - Pontos turísticos:\n");
     printf("Escolha: ");
     scanf("%d", &escolha);
     return escolha;
 }
-int comparar_característica(Cidade carta_jogador, Cidade carta_computador, int atributo) {
-    switch (atributo) {
-        case 1:  // População
+int comparar_característica(Cidade carta_jogador, Cidade carta_computador, int característica) {
+    switch (característica) {
+        case 1:  
             return carta_jogador.populacao > carta_computador.populacao;
-        case 2:  // Área
+        case 2:  
             return carta_jogador.area > carta_computador.area;
-        case 3:  // PIB
+        case 3:  
             return carta_jogador.pib > carta_computador.pib;
-        case 4:  // Pontos turísticos
+        case 4:  
             return carta_jogador.pontos_turisticos > carta_computador.pontos_turisticos;
         default:
             return 0;
@@ -44,7 +44,7 @@ int comparar_característica(Cidade carta_jogador, Cidade carta_computador, int 
 int main() {
     srand(time(0));  
     Cidade cartas[] = {
-        // Brasil.
+        // Cartas do Brasil.
         {2279.686, 11.401, 103.281, 7, "Manaus A01"},
         {96.372, 5.952333, 12.255, 6, "Parintins A02"},
         {101.883, 7.336579, 15.506, 4, "Manacapuru A03"},
@@ -77,7 +77,7 @@ int main() {
         {40134, 239341, 2.658017, 10, "Gramado H02"},
         {463338, 1.652308, 25.965161, 2, "Caxias do Sul H03"},
         {1332570, 495, 76.074563, 7, "Porto Alegre H04"},
-        // Estados Unidos.
+        // Cartas do Estados Unidos.
         {706.799, 400.74, 311.876, 13, "Denver I01"},
         {395.052, 423.691, 211.192596, 9, "Aurora I02"},
         {155.961, 64.95, 211.192596, 5, "Lakewood I03"},
@@ -127,7 +127,7 @@ int main() {
         int característica = escolher_característica();
 
         if (comparar_característica(carta_jogador, carta_computador, característica)) {
-            printf("\nVocê ganhou esta rodada!\n");
+            printf("\nVocê ganhou.\n");
             pontos_jogador++;
         } else {
             printf("\nO computador ganhou.\n");
@@ -148,7 +148,7 @@ int main() {
     if (pontos_jogador > pontos_computador) {
         printf("\nVocê ganhou.\n");
     } else if (pontos_jogador < pontos_computador) {
-        printf("\nO computador gamhou.\n");
+        printf("\nO computador ganhou.\n");
     } else {
         printf("\nO jogo empatou.\n");
     }
